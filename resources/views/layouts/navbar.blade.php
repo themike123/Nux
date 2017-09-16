@@ -11,9 +11,24 @@
         </div><!--//navbar-header-->
         <div class="navbar-collapse collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active nav-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="nav-item"><a href="{{ route('courses_path') }}">Cursos</a></li>
-                <li class="nav-item"><a href="{{ route('abouts_path') }}">Nux</a></li>
+                @if (Request::path() == '/')
+                  <li class="active nav-item"><a href="{{ url('/') }}">Home</a></li>
+                @else
+                  <li class="nav-item"><a href="{{ url('/') }}">Home</a></li>
+                @endif
+
+                @if (Request::path() == 'courses')
+                  <li class="active nav-item"><a href="{{ route('courses_path') }}">Cursos</a></li>
+                @else
+                  <li class="nav-item"><a href="{{ route('courses_path') }}">Cursos</a></li>
+                @endif
+
+                @if (Request::path() == 'about')
+                  <li class="active nav-item"><a href="{{ route('abouts_path') }}">Nux</a></li>
+                @else
+                  <li class="nav-item"><a href="{{ route('abouts_path') }}">Nux</a></li>
+                @endif
+                
                 <!--li class="nav-item dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Courses <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
@@ -74,7 +89,11 @@
                         <li><a href="icons.html"><i class="fa fa-heart"></i> Icons</a></li>
                     </ul>
                 </li--><!--//dropdown-->
-                <li class="nav-item"><a href="{{ route('contacts_path') }}">Contacto</a></li>
+                @if (Request::path() == 'contact')
+                  <li class="active nav-item"><a href="{{ route('contacts_path') }}">Contacto</a></li>
+                @else
+                  <li class="nav-item"><a href="{{ route('contacts_path') }}">Contacto</a></li>
+                @endif
             </ul><!--//nav-->
         </div><!--//navabr-collapse-->
     </div><!--//container-->

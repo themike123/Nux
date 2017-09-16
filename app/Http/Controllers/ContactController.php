@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Mail\Contact;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -34,7 +36,16 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request,[
+        'name' => 'required',
+        'email' => 'required|email',
+        'phone' =>  'required|numeric',
+        'message' => 'required'
+      ]);
+
+      $user= array('name' => $request->name,'email'=>$request->email,'phone'=> $request->phone,'message'=>$request->message );
+      Mail::to('NovaUniversitasX@gmail.com')->send(new Contact($user));
+      return redirect()->route('store_contact_path');
     }
 
     /**

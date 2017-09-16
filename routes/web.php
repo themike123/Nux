@@ -19,6 +19,7 @@ Route::get('/getCourses','CourseController@getCourses');
 
 //Paginas de inicios
 Route::name('contacts_path')->get('/contact','ContactController@index');
+Route::name('store_contact_path')->post('/contacts','ContactController@store');
 Route::name('abouts_path')->get('/about','WelcomeController@about');
 Route::name('term_path')->get('/terms','WelcomeController@term');
 Route::name('privacy_path')->get('/privacy','WelcomeController@privacy');

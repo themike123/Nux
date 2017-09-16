@@ -20,25 +20,46 @@
           <p>Esta información será enviada al correo electrónico de NUX, posteriormente se pondrán en
             contacto con usted.
           </p>
-          <form>
+          <form action=" {{ route('store_contact_path') }} " method="POST">
+              {{ csrf_field() }}
+
               <div class="form-group name">
                   <label for="name">Nombre</label>
-                  <input id="name" type="text" class="form-control" placeholder="Introduzca su nombre">
+                  <input required id="name" name="name" type="text" class="form-control" placeholder="Introduzca su nombre">
+                  @if ($errors->has('name'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('name') }}</strong>
+                      </span>
+                  @endif
               </div><!--//form-group-->
               <div class="form-group email">
-                  <label for="email">Email<span class="required">*</span></label>
-                  <input id="email" type="email" class="form-control" placeholder="Introduzca su email">
+                  <label for="email">Email</label>
+                  <input required id="email" name="email" type="email" class="form-control" placeholder="Introduzca su email">
+                  @if ($errors->has('email'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                  @endif
               </div><!--//form-group-->
               <div class="form-group phone">
                   <label for="phone">Telefono</label>
-                  <input id="phone" type="tel" class="form-control" placeholder="Introduzca su telefono">
+                  <input required id="phone"  name="phone" type="tel" class="form-control" placeholder="Introduzca su telefono">
+                  @if ($errors->has('phone'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('phone') }}</strong>
+                      </span>
+                  @endif
               </div><!--//form-group-->
               <div class="form-group message">
-                  <label for="message">Mensaje<span class="required">*</span></label>
-                  <textarea id="message" class="form-control" rows="6" placeholder="Introduzca su mensaje aquí"></textarea>
+                  <label for="message">Mensaje</label>
+                  <textarea required  id="message" name="message" class="form-control" rows="6" placeholder="Introduzca su mensaje aquí"></textarea>
+                  @if ($errors->has('message'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('message') }}</strong>
+                      </span>
+                  @endif
               </div><!--//form-group-->
               <button type="submit" class="btn btn-theme">Enviar</button>
-
           </form>
         </article><!--//contact-form-->
       </div>
@@ -48,7 +69,7 @@
               <div class="gmap-wrapper" id="map">
                   <!--//You need to embed your own google map below-->
                   <!--//Ref: https://support.google.com/maps/answer/144361?co=GENIE.Platform%3DDesktop&hl=en -->
-                  
+
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.1274896692235!2d-96.67674234993524!3d16.770331588394463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c740baa4583d9b%3A0x2cc458af0039f3ed!2sNovauniversitas!5e0!3m2!1ses-419!2ses!4v1505324150169" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
               </div><!--//gmap-wrapper-->
           </article><!--//map-->

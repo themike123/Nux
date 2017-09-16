@@ -36,11 +36,13 @@
                                 <tr>
                                     <td class="content-cell">
                                       <h1>NUX</h1>
-                                      <p>
-                                        Nux te recomienda tener password faciles de recordar, pero no tan
-                                        intuitivos de adivinar.
-                                      </p>
-                                        {{ Illuminate\Mail\Markdown::parse($slot) }}                                        
+                                    </td>
+                                    <td class="content-cell">
+                                      <h2>Intenta contactarte:</h2>
+                                      <h4></h4>
+                                      <h4>correo:</h4>
+                                      <h4>telefono:</h4>
+                                      <h4>Mensaje: </h4>
                                     </td>
                                 </tr>
                             </table>

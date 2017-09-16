@@ -51,6 +51,7 @@ return [
     |
     */
 
+    //'url' => env('APP_URL', 'http://localhost:8000'),
     'url' => env('APP_URL', 'http://localhost:8000'),
     //'url' => env('APP_URL', '192.168.0.103'),
 
@@ -79,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -178,6 +179,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        //Lenguaje español
+        Laraveles\Spanish\SpanishServiceProvider::class,
 
     ],
 
