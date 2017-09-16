@@ -5,35 +5,39 @@
   <div id="promo-slider" class="slider flexslider">
       <ul class="slides">
           <li>
-              <img src="{{ asset('images/slides/nova-111.jpg') }}"  alt="" />
+              <!--img src="{{ asset('images/slides/nova-111.jpg') }}"  alt="" /-->
+              <img src="{{ asset('images/slides/slide-1.jpg') }}"  alt="" />
               <p class="flex-caption">
-                  <span class="main" >Join College Green Online</span>
+                  <span class="main" >Ven y únete a NUX</span>
                   <br />
-                  <span class="secondary clearfix" >Choose from over 100 online and offline courses</span>
+                  <span class="secondary clearfix" >Elige entre más de 100 cursos en línea.</span>
               </p>
           </li>
           <li>
-              <img src="{{ asset('images/slides/nova-22.jpg') }}"  alt="" />
+              <!--img src="{{ asset('images/slides/nova-22.jpg') }}"  alt="" /-->
+              <img src="{{ asset('images/slides/slide-2.jpg') }}"  alt="" />
               <p class="flex-caption">
-                  <span class="main" >Come to our Open Days</span>
+                  <span class="main" >Cursos Gratis Online</span>
                   <br />
-                  <span class="secondary clearfix" >Donec accumsan nunc sed ipsum dapibus consectetur</span>
+                  <span class="secondary clearfix" >Avanza en tu carrera, mejora tu vida.</span>
               </p>
           </li>
           <li>
-              <img src="{{ asset('images/slides/nova-33.jpg') }}"  alt="" />
+              <!--img src="{{ asset('images/slides/nova-33.jpg') }}"  alt="" /-->
+              <img src="{{ asset('images/slides/slide-3.jpg') }}"  alt="" />
               <p class="flex-caption">
-                  <span class="main" >Discover online courses</span>
+                  <span class="main" >Da un paso más</span>
                   <br />
-                  <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                  <span class="secondary clearfix" >Inscribete a un curso y continúa formándote.</span>
               </p>
           </li>
           <li>
-              <img src="{{ asset('images/slides/nova-44.jpg') }}"  alt="" />
+              <!--img src="{{ asset('images/slides/nova-44.jpg') }}"  alt="" /-->
+              <img src="{{ asset('images/slides/slide-4.jpg') }}"  alt="" />
               <p class="flex-caption">
-                  <span class="main" >Nam ultricies accumsan pellentesque</span>
+                  <span class="main" >Nux, el primer paso para alcanzar tus metas</span>
                   <br />
-                  <span class="secondary clearfix" >In justo orci, ornare vitae nulla sed, suscipit suscipit augue</span>
+                  <span class="secondary clearfix" >Expande tus habilidades</span>
               </p>
           </li>
       </ul><!--//slides-->
@@ -62,7 +66,7 @@
                    <div class="item active">
                        @if ($courses[0])
                        <div class="col-md-4 news-item">
-                           <h2 class="title"><a href="news-single.html">{{$courses[0]->title}}</a></h2>                           
+                           <h2 class="title"><a href="news-single.html">{{$courses[0]->title}}</a></h2>
                            <img class="thumb" src="{{ asset('images/courses') }}/{{$courses[0]->image}}"  alt="" height="100px" width="100px" />
                            <p>{{$courses[0]->description}}</p>
                            <a class="read-more" href="news-single.html">Read more<i class="fa fa-chevron-right"></i></a>
