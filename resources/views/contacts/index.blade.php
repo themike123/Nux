@@ -20,7 +20,8 @@
           <p>Esta información será enviada al correo electrónico de NUX, posteriormente se pondrán en
             contacto con usted.
           </p>
-          <form action=" {{ route('store_contact_path') }} " method="POST">
+          <!--form action=" {{ route('store_contact_path') }} " method="POST"-->                          
+            <form>
               {{ csrf_field() }}
 
               <div class="form-group name">

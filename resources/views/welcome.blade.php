@@ -63,48 +63,60 @@
        <div class="section-content clearfix">
            <div id="news-carousel" class="news-carousel carousel slide">
                <div class="carousel-inner">
+                 @if(count($courses) )
                    <div class="item active">
                        @if ($courses[0])
                        <div class="col-md-4 news-item">
                            <h2 class="title"><a href="news-single.html">{{$courses[0]->title}}</a></h2>
                            <img class="thumb" src="{{ asset('images/courses') }}/{{$courses[0]->image}}"  alt="" height="100px" width="100px" />
                            <p>{{$courses[0]->description}}</p>
-                           <a class="read-more" href="news-single.html">Read more<i class="fa fa-chevron-right"></i></a>
+                           <a class="read-more" href="{{ route('course_path',['course'=>$courses[0]->id]) }}">Leer más<i class="fa fa-chevron-right"></i></a>
                        </div><!--//news-item-->
                        @endif
+                       @if (isset($courses[1]) )
                        <div class="col-md-4 news-item">
-                           <h2 class="title"><a href="news-single.html">Morbi at vestibulum turpis</a></h2>
-                           <p>Nam feugiat erat vel neque mollis, non vulputate erat aliquet. Maecenas ac leo porttitor, semper risus condimentum, cursus elit. Vivamus vitae libero tellus.</p>
-                           <a class="read-more" href="news-single.html">Read more<i class="fa fa-chevron-right"></i></a>
-                           <img class="thumb" src="{{ asset('images/news/news-thumb-2.jpg') }}"  alt="" />
+                           <h2 class="title"><a href="news-single.html">{{$courses[1]->title}}</a></h2>
+                           <p>{{$courses[1]->description}}</p>
+                           <a class="read-more" href="{{ route('course_path',['course'=>$courses[1]->id]) }}">Leer más<i class="fa fa-chevron-right"></i></a>
+                           <img class="thumb" src="{{ asset('images/courses') }}/{{$courses[1]->image}}"  alt="" height="100px" width="100px" />
                        </div><!--//news-item-->
+                       @endif
+                       @if (isset($courses[2]) )
                        <div class="col-md-4 news-item">
-                           <h2 class="title"><a href="news-single.html">Aliquam id iaculis urna</a></h2>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque. Proin elementum tristique euismod. </p>
-                           <a class="read-more" href="news-single.html">Read more<i class="fa fa-chevron-right"></i></a>
-                           <img class="thumb" src="{{ asset('images/news/news-thumb-3.jpg') }}"  alt="" />
+                           <h2 class="title"><a href="news-single.html">{{$courses[2]->title}}</a></h2>
+                           <p>{{$courses[2]->description}}</p>
+                           <a class="read-more" href="{{ route('course_path',['course'=>$courses[2]->id]) }}">Leer más<i class="fa fa-chevron-right"></i></a>
+                           <img class="thumb" src="{{ asset('images/courses') }}/{{$courses[2]->image}}"  alt="" height="100px" width="100px"/>
                        </div><!--//news-item-->
+                       @endif
                    </div><!--//item-->
                    <div class="item">
+                     @if (isset($courses[3]))
                        <div class="col-md-4 news-item">
-                           <h2 class="title"><a href="news-single.html">Phasellus scelerisque metus</a></h2>
-                           <img class="thumb" src="{{ asset('images/news/news-thumb-4.jpg') }}"  alt="" />
-                           <p>Suspendisse purus felis, porttitor quis sollicitudin sit amet, elementum et tortor. Praesent lacinia magna in malesuada vestibulum. Pellentesque urna libero.</p>
-                           <a class="read-more" href="news-single.html">Read more<i class="fa fa-chevron-right"></i></a>
+                           <h2 class="title"><a href="news-single.html">{{$courses[2]->title}}</a></h2>
+                           <img class="thumb" src="{{ asset('images/courses') }}/{{$courses[3]->image}}"  alt="" height="100px" width="100px" />
+                           <p>{{$courses[2]->description}}</p>
+                           <a class="read-more" href="{{ route('course_path',['course'=>$courses[3]->id]) }}">Leer más<i class="fa fa-chevron-right"></i></a>
                        </div><!--//news-item-->
+                       @endif
+                       @if (isset($courses[4]))
                        <div class="col-md-4 news-item">
-                           <h2 class="title"><a href="news-single.html">Morbi at vestibulum turpis</a></h2>
-                           <p>Nam feugiat erat vel neque mollis, non vulputate erat aliquet. Maecenas ac leo porttitor, semper risus condimentum, cursus elit. Vivamus vitae libero tellus.</p>
-                           <a class="read-more" href="news-single.html">Read more<i class="fa fa-chevron-right"></i></a>
-                           <img class="thumb" src="{{ asset('images/news/news-thumb-5.jpg') }}"  alt="" />
+                           <h2 class="title"><a href="news-single.html">{{$courses[4]->title}}</a></h2>
+                           <p>{{$courses[4]->description}}</p>
+                           <a class="read-more" href="{{ route('course_path',['course'=>$courses[4]->id]) }}">Leer más<i class="fa fa-chevron-right"></i></a>
+                           <img class="thumb" src="{{ asset('images/courses') }}/{{$courses[4]->image}}"  alt="" height="100px" width="100px" />
                        </div><!--//news-item-->
+                       @endif
+                       @if (isset($courses[5]))
                        <div class="col-md-4 news-item">
-                           <h2 class="title"><a href="news-single.html">Aliquam id iaculis urna</a></h2>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque. Proin elementum tristique euismod. </p>
-                           <a class="read-more" href="news-single.html">Read more<i class="fa fa-chevron-right"></i></a>
-                           <img class="thumb" src="{{ asset('images/news/news-thumb-6.jpg') }}"  alt="" />
+                           <h2 class="title"><a href="news-single.html">{{$courses[5]->title}}</a></h2>
+                           <p>{{$courses[5]->description}}</p>
+                           <a class="read-more" href="{{ route('course_path',['course'=>$courses[5]->id]) }}">Leer más<i class="fa fa-chevron-right"></i></a>
+                           <img class="thumb" src="{{ asset('images/courses') }}/{{$courses[5]->image}}"  alt="" height="100px" width="100px" />
                        </div><!--//news-item-->
+                       @endif
                    </div><!--//item-->
+                   @endif
                </div><!--//carousel-inner-->
            </div><!--//news-carousel-->
        </div><!--//section-content-->

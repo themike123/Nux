@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 use Auth;
 use Carbon\Carbon;
+use Intervention\Image\ImageManager;
+use Image;
+
+
 
 class CourseController extends Controller
 {
@@ -32,6 +36,16 @@ class CourseController extends Controller
            'code' => 200,
            'courses'=> $courses,
            'message' => 'Obtención exitosa de los cursos'
+       ]);
+    }
+
+    public function getCourse(Course $course)
+    {
+      return response()->json([
+           'status' => 'success',
+           'code' => 200,
+           'course'=> $course,
+           'message' => 'Obtención exitosa del curso'
        ]);
     }
 
@@ -81,6 +95,14 @@ class CourseController extends Controller
         $date = Carbon::now();
         $course->users()->attach(Auth::user()->id, array('start' => $date,'end'=>'' ));
 
+        //$manager = new ImageManager(array('driver' => 'imagick'));
+        //$thumbnail = $manager->make($request->file('image') )->resize(300, 200);
+
+        /*$thumbnail = Image::make($request->file('image'));
+        $thumbnail->resize(320, 240);
+        $destinationPathThumbnail=public_path('/images/courses/thumbnail/'.$name);
+        $thumbnail->save($destinationPathThumbnail);
+        */
         return response()->json([
              'status' => 'success',
              'code' => 200,

@@ -13,9 +13,11 @@
 
 Route::get('/','WelcomeController@index');
 Route::name('courses_path')->get('/courses','CourseController@index');
+Route::name('course_path')->get('/courses/{course}','CourseController@index');
 
 //Peticiones ajax
 Route::get('/getCourses','CourseController@getCourses');
+Route::get('/getCourse/{course}','CourseController@getCourse');
 
 //Paginas de inicios
 Route::name('contacts_path')->get('/contact','ContactController@index');
@@ -31,11 +33,3 @@ Route::group(['middleware'=>'auth'],function (){
     //Couses
     Route::name('store_course_path')->post('/courses','CourseController@store');
 });
-
-//Route::name('posts_path')->get('/posts','PostController@index');
-//Route::name('create_post_path')->get('/posts/create','PostController@create');
-//Route::name('store_post_path')->post('/posts','PostController@store');
-//Route::name('post_path')->get('/posts/{post}','PostController@show');
-//Route::name('edit_post_path')->get('/posts/{post}/edit','PostController@edit');
-//Route::name('update_post_path')->put('/posts/{post}','PostController@update');
-//Route::name('delete_post_path')->delete('/posts/{post}','PostController@destroy');

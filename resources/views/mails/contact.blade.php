@@ -38,11 +38,14 @@
                                       <h1>NUX</h1>
                                     </td>
                                     <td class="content-cell">
-                                      <h2>Intenta contactarte:</h2>
-                                      <h4></h4>
-                                      <h4>correo:</h4>
-                                      <h4>telefono:</h4>
-                                      <h4>Mensaje: </h4>
+                                      <p>Intenta contactarte:</p>
+                                      {{$email}}                                      
+
+                                      <!--p>Intenta contactarte:<strong>{!! $name !!}</strong></p>
+                                      <p>correo:<strong>{!! $email !!}</strong></p>
+                                      <p>telefono:<strong>{!! $phone !!}</strong></p>
+                                      <p>Mensaje:<strong>  {!! $message !!}</strong> </p-->
+
                                     </td>
                                 </tr>
                             </table>

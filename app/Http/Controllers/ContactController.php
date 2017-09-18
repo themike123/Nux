@@ -45,7 +45,27 @@ class ContactController extends Controller
 
       $user= array('name' => $request->name,'email'=>$request->email,'phone'=> $request->phone,'message'=>$request->message );
       Mail::to('NovaUniversitasX@gmail.com')->send(new Contact($user));
-      return redirect()->route('store_contact_path');
+
+      /*Mail::send('emails.contact', request()->all(), function ($message) {
+       $message->subject('Website Contact');
+       $message->to(config('mail.from.address'));
+       $message->replyTo(request()->input('email'));
+     });*/
+
+     /*$email = $request->email;
+
+      Mail::send('emails.info', $data, function ($message) use ($email) {
+
+          $message->from('myemail@gmail.com', 'My Email');
+          $message->to($email)->subject('The subject');
+      });*/
+
+      return response()->json([
+           'status' => 'success',
+           'code' => 200,
+           'courses'=> $user,
+           'message' => 'Se envio bien el correo'
+       ]);
     }
 
     /**

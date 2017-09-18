@@ -17,6 +17,7 @@
     @else
       <meta name="user_nux" id="user_nux" content="{{Auth::user()->rol}}">
     @endif
+    <!--meta name="path" id="path" content="{{Request::root()}}"-->
 
     <title>{{ config('app.name', 'Nux') }}</title>
 

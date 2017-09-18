@@ -17,17 +17,17 @@ class Contact extends Mailable
      *
      * @return void
      */
-    public $name;
-    public $email;
-    public $phone;
-    public $message;
+    public $name="";
+    public $email="";
+    public $phone="";
+    public $message="";
 
     public function __construct(array $user)
     {
-        $this->name=$user['name'];
-        $this->email=$user['email'];
-        $this->phone=$user['phone'];
-        $this->message=$user['message'];
+        $this->name=$user["name"];
+        $this->email=$user["email"];
+        $this->phone=$user["phone"];
+        $this->message=$user["message"];
     }
 
     /**
@@ -37,6 +37,7 @@ class Contact extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.contact');
+        return $this->view('mails.contact')->with(['name'=>$this->name,'email'=>$this->email,'phone'=>$this->phone,'message'=>$this->message]);
+        //return $this->view('mails.contact')->with('name',$this->name,'email',$this->email,'phone',$this->phone,'message',$this->message);
     }
 }
